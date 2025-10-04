@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "weapon_profiles",
+  "info": {
+    "singularName": "weapon-profile",
+    "pluralName": "weapon-profiles",
+    "displayName": "weapon_profile"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "profile": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "A": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "default": 1,
+      "min": 1
+    },
+    "BS_WS": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "D": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "SR": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "weapon": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::weapon.weapon",
+      "inversedBy": "weapon_profiles"
+    }
+  }
+}

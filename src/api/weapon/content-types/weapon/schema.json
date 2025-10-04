@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "weapons",
+  "info": {
+    "singularName": "weapon",
+    "pluralName": "weapons",
+    "displayName": "weapon"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "unique": true
+    },
+    "weapon_type": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "enum": [
+        "shoot",
+        "attack"
+      ]
+    },
+    "description": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "weapon_profiles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::weapon-profile.weapon-profile",
+      "mappedBy": "weapon"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "unique_actions",
+  "info": {
+    "singularName": "unique-action",
+    "pluralName": "unique-actions",
+    "displayName": "unique_action"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "APL": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "description": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "operative": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::operative.operative",
+      "inversedBy": "unique_actions"
+    }
+  }
+}

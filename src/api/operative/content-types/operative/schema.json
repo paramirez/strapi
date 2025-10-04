@@ -1,0 +1,125 @@
+{
+  "kind": "collectionType",
+  "collectionName": "operatives",
+  "info": {
+    "singularName": "operative",
+    "pluralName": "operatives",
+    "displayName": "operative"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "faction": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::faction.faction",
+      "inversedBy": "operatives"
+    },
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "unique": false
+    },
+    "M": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "default": 6,
+      "unique": false,
+      "min": 1
+    },
+    "APL": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "default": 2,
+      "min": 1
+    },
+    "SV": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "3+",
+      "required": true
+    },
+    "W": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "default": 7,
+      "min": 1
+    },
+    "Base": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "32",
+      "required": true
+    },
+    "keywords": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "order_index": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": false,
+      "default": 0
+    },
+    "weapons": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::weapon.weapon"
+    },
+    "abilities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ability.ability",
+      "mappedBy": "operative"
+    },
+    "unique_actions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::unique-action.unique-action",
+      "mappedBy": "operative"
+    }
+  }
+}

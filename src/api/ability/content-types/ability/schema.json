@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "abilities",
+  "info": {
+    "singularName": "ability",
+    "pluralName": "abilities",
+    "displayName": "ability"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "operative": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::operative.operative",
+      "inversedBy": "abilities"
+    },
+    "description": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "APL": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

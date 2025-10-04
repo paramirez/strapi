@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "factions",
+  "info": {
+    "singularName": "faction",
+    "pluralName": "factions",
+    "displayName": "faction"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "unique": true
+    },
+    "operatives": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::operative.operative",
+      "mappedBy": "faction"
+    }
+  }
+}
